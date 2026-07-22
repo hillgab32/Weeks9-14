@@ -146,7 +146,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 2, z: 1}
+  m_LocalScale: {x: 6, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1077126836}
@@ -237,7 +237,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -4, z: 0}
-  m_LocalScale: {x: 10, y: 2, z: 1}
+  m_LocalScale: {x: 10, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1077126836}
@@ -328,7 +328,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 8, y: 2, z: 1}
+  m_LocalScale: {x: 8, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1077126836}
@@ -558,6 +558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69d1f3944785fa4dbfedc9453c3c3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StrategyBuilder
+  brickTransforms: []
+  brickPrefab: {fileID: 0}
+  brickBuildDuration: 3
 --- !u!4 &1077126836
 Transform:
   m_ObjectHideFlags: 0
