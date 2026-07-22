@@ -6,9 +6,14 @@ using UnityEngine.InputSystem;
 
 public class StrategyBuilder : MonoBehaviour
 {
+    public List<Transform> brickTransforms;
     public GameObject building;
-
-    // private Coroutine brickBuildCoroutine;
+    public float brickBuildDuration;
+    private Coroutine brickBuildCoroutine;
+    public AnimationCurve constructionCurve;
+    private float constructionProgress = 0f;
+    private Coroutine brickCoroutine;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,23 +27,41 @@ public class StrategyBuilder : MonoBehaviour
         if(Mouse.current.leftButton.wasReleasedThisFrame)
         {
             Instantiate(building);
+            brickBuildCoroutine = StartCoroutine(BuildingBuild());
         }
-        // brickBuildCoroutine = StartCoroutine(BrickBuild());
+
     }
 
-    /**private IEnumerator BrickBuild()
+    private IEnumerator BuildingBuild()
     {
-        float t = 0;
+        for (int i = 0; i < brickTransforms.Count; i++)
+        {
+            
+            yield return brickCoroutine = StartCoroutine(BrickBuild(brickTransforms[i]));
+        }
 
+        yield return null;
+
+        yield return new WaitForSeconds(0.5f);
+    }
+    
+    private IEnumerator BrickBuild(Transform brickTransform)
+    {
+
+        float t = 0;
         while (t < brickBuildDuration)
         {
             t += Time.deltaTime;
-            transform.localScale = Vector3.one * t / brickBuildDuration;
+            Vector3 growBuilding = brickTransform.localScale;
+            
+            growBuilding.y = constructionCurve.Evaluate( 1 * t / brickBuildDuration);
+
+            brickTransform.localScale = growBuilding;
 
             yield return null;
         }
 
-        //WAIT AFTER THE TREE HAS GROWN FOR A SECOND BEFORE GROWING THE APPLES
-        yield return new WaitForSeconds(1);
-    } */
+
+        yield return new WaitForSeconds(0.5f);
+    }
 }
