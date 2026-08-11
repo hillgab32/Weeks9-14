@@ -1,39 +1,33 @@
 using UnityEngine;
 
-public class SpikeSpawner : MonoBehaviour
+public class CandySpawner : MonoBehaviour
 {
-    public GameObject spike;
+    public GameObject candy;
 
     public Vector3 currentTransform;
     public float timer;
     public float spawnRate;
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentTransform = transform.position;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
-        if(timer > spawnRate)
+        if (timer > spawnRate)
         {
-            float spikePosition = Random.Range(-8, 8);
+            float heartPosition = Random.Range(-3, 3);
 
-            GameObject spawnSpike = Instantiate(spike);
+            GameObject spawnHeart = Instantiate(candy);
             timer = 0f;
-            
-            spawnSpike.transform.position = new Vector3(spikePosition, currentTransform.y, currentTransform.z);
+
+            spawnHeart.transform.position = new Vector3(currentTransform.x, heartPosition, currentTransform.z);
 
         }
 
         timer += Time.deltaTime;
-
-        
     }
 }
