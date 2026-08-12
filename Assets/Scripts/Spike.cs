@@ -7,9 +7,10 @@ public class Spike : MonoBehaviour
     public Eyeball playerEyeball;
 
     public float spikeSpeed;
+    bool isTouchingSpike = false;
 
     public UnityEvent onSpikeHit;
-    public UnityEvent offSpikeHit;
+    //public UnityEvent offSpikeHit;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,5 +28,18 @@ public class Spike : MonoBehaviour
         transform.position = spikeFall;
 
         Destroy(gameObject, 4f);
+
+        if (playerRenderer.bounds.Contains(transform.position) && !isTouchingSpike)
+        {
+            Debug.Log("Ive been hit!");
+            onSpikeHit.Invoke();
+            isTouchingSpike = true;
+        }
+        if (!playerRenderer.bounds.Contains(transform.position) && isTouchingSpike)
+        {
+            //offSpikeHit.Invoke();
+            isTouchingSpike = false;
+        }
+
     }
 }

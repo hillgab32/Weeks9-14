@@ -29,5 +29,8 @@ public class Eyeball : MonoBehaviour
         eyeSpeed++;
     }
 
-    
+    public void OnDeath()
+    {
+        
+    }
 }

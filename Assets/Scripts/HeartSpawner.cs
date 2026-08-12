@@ -18,17 +18,19 @@ public class HeartSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer > spawnRate)
-        {
-            float heartPosition = Random.Range(-3, 3);
+        
+    }
 
-            GameObject spawnHeart = Instantiate(heart);
-            timer = 0f;
+    public void SpawnHeart()
+    {
+        float heartPosition = Random.Range(-3, 3);
 
-            spawnHeart.transform.position = new Vector3(currentTransform.x, heartPosition, currentTransform.z);
+        GameObject spawnHeart = Instantiate(heart);
+        timer = 0f;
 
-        }
+        spawnHeart.transform.position = new Vector3(currentTransform.x, heartPosition, currentTransform.z);
 
-        timer += Time.deltaTime;
+        Debug.Log("yo");
+
     }
 }

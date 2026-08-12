@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 0.4056604, g: 0.32020473, b: 0.23535956, a: 1}
@@ -104,24 +104,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5790137664536488276ba22f697772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spike
-  playerRenderer: {fileID: 0}
-  playerEyeball: {fileID: 0}
+  playerRenderer: {fileID: 251369342059056749, guid: c7cf35d58c2596e4b868bfec6951dde4, type: 3}
+  playerEyeball: {fileID: 9209483030115645559, guid: c7cf35d58c2596e4b868bfec6951dde4, type: 3}
   spikeSpeed: 3
   onSpikeHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 2991933897192534190, guid: e3cd96de3e50efb45bbb6831935b3c65, type: 3}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: OnDamage
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  offSpikeHit:
-    m_PersistentCalls:
-      m_Calls: []

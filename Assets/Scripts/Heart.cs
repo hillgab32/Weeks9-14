@@ -9,7 +9,7 @@ public class Heart : MonoBehaviour
     public float heartSpeed;
 
     public UnityEvent onHeartHit;
-    public UnityEvent offHeartHit;
+    //public UnityEvent offHeartHit;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,5 +27,11 @@ public class Heart : MonoBehaviour
         transform.position = heartMove;
 
         Destroy(gameObject, 15f);
+
+        if (playerRenderer.bounds.Contains(transform.position))
+        {
+            onHeartHit.Invoke();
+            Destroy(gameObject);
+        }
     }
 }

@@ -8,8 +8,8 @@ public class Candy : MonoBehaviour
 
     public float candySpeed;
 
-    public UnityEvent onHeartHit;
-    public UnityEvent offHeartHit;
+    public UnityEvent onCandyHit;
+    //public UnityEvent offCandyHit;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,5 +27,14 @@ public class Candy : MonoBehaviour
         transform.position = candyMove;
 
         Destroy(gameObject, 20f);
+
+        if (playerRenderer.bounds.Contains(transform.position))
+        {
+            onCandyHit.Invoke();
+            Debug.Log("yumm");
+            Destroy(gameObject);
+        }
     }
+
+
 }

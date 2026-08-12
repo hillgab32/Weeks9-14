@@ -17,7 +17,7 @@ public class CandySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer > spawnRate)
+       /**  if (timer > spawnRate)
         {
             float heartPosition = Random.Range(-3, 3);
 
@@ -28,6 +28,19 @@ public class CandySpawner : MonoBehaviour
 
         }
 
-        timer += Time.deltaTime;
+        timer += Time.deltaTime; */
+    }
+
+    public void SpawnCandy()
+    {
+        float heartPosition = Random.Range(-3, 3);
+
+        GameObject spawnCandy = Instantiate(candy);
+        timer = 0f;
+
+        spawnCandy.transform.position = new Vector3(currentTransform.x, heartPosition, currentTransform.z);
+
+        Debug.Log("yo");
+
     }
 }

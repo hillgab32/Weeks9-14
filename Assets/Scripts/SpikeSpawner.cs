@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpikeSpawner : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SpikeSpawner : MonoBehaviour
     public float timer;
     public float spawnRate;
 
+    public UnityEvent spawnSpike;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,20 +22,18 @@ public class SpikeSpawner : MonoBehaviour
     void Update()
     {
         
+    }
 
-        if(timer > spawnRate)
-        {
-            float spikePosition = Random.Range(-8, 8);
+    public void SpawnSpike()
+    {
+        float spikePosition = Random.Range(-3, 3);
 
-            GameObject spawnSpike = Instantiate(spike);
-            timer = 0f;
-            
-            spawnSpike.transform.position = new Vector3(spikePosition, currentTransform.y, currentTransform.z);
+        GameObject spawnSpike = Instantiate(spike);
+        timer = 0f;
 
-        }
+        spawnSpike.transform.position = new Vector3(spikePosition, currentTransform.y, currentTransform.z);
 
-        timer += Time.deltaTime;
+        Debug.Log("yo");
 
-        
     }
 }
