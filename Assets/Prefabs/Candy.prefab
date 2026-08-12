@@ -106,13 +106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ac8e6d29a7463469a1f8866b862e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candy
-  playerRenderer: {fileID: 251369342059056749, guid: c7cf35d58c2596e4b868bfec6951dde4, type: 3}
-  playerEyeball: {fileID: 9209483030115645559, guid: c7cf35d58c2596e4b868bfec6951dde4, type: 3}
+  playerRenderer: {fileID: 7454271700249032346, guid: c7cf35d58c2596e4b868bfec6951dde4, type: 3}
+  playerEyeball: {fileID: 7352383173116873926, guid: c7cf35d58c2596e4b868bfec6951dde4, type: 3}
   candySpeed: 5
   onCandyHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9209483030115645559, guid: c7cf35d58c2596e4b868bfec6951dde4, type: 3}
+      - m_Target: {fileID: 7352383173116873926, guid: c7cf35d58c2596e4b868bfec6951dde4, type: 3}
         m_TargetAssemblyTypeName: Eyeball, Assembly-CSharp
         m_MethodName: OnBoost
         m_Mode: 1

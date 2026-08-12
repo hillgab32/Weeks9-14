@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class EyeDodger : MonoBehaviour
 {
-    
+    public GameObject eyeball;
     public Slider healthBar;
     public Canvas parentCanvas;
     public UnityEvent healthZero;
@@ -13,7 +13,7 @@ public class EyeDodger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Instantiate(eyeball);
         //healthBarSlider = Instantiate(healthBar);
         //healthBarSlider.transform.SetParent(parentCanvas.transform, false);
         //slider.value = 100;
